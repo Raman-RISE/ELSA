@@ -1,0 +1,6 @@
+name: ehip_evn
+channels:
+  - atonarp
+  - omnia
+  - defaults
+prefix: C:\ProgramData\Anaconda3\envs\ehip_evn
