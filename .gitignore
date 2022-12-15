@@ -126,3 +126,9 @@ ui-tests/playwright-report
 
 # VSCode
 .vscode
+aistoken.txt
+*.jpg
+*.tif
+*.tfw
+*.jpw
+working/*
