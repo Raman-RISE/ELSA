@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "6183e60f-a78b-4a78-8793-e70a4430af7e",
+		"name": "ELSA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ACLED",
+			"item": []
+		},
+		{
+			"name": "AIS-data",
+			"item": [
+				{
+					"name": "AIS get positions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Prefer",
+								"value": "params=single-object",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"geojson_geometry\":{{locations_polygon}},\r\n    \"start_timestamp\":\"2022-09-20T16:00:00\",\r\n    \"end_timestamp\":\"2022-09-21T18:00:00\"\r\n}"
+						},
+						"url": {
+							"raw": "https://db.mo.ri.se/rpc/get_position_reports",
+							"protocol": "https",
+							"host": [
+								"db",
+								"mo",
+								"ri",
+								"se"
+							],
+							"path": [
+								"rpc",
+								"get_position_reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AIS get grouped positions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Prefer",
+								"value": "params=single-object",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"geojson_geometry\":{{locations_polygon}},\r\n    \"start_timestamp\":\"2022-09-21T16:00:00\",\r\n    \"end_timestamp\":\"2022-09-21T18:00:00\"\r\n}"
+						},
+						"url": {
+							"raw": "https://db.mo.ri.se/rpc/get_grouped_position_reports",
+							"protocol": "https",
+							"host": [
+								"db",
+								"mo",
+								"ri",
+								"se"
+							],
+							"path": [
+								"rpc",
+								"get_grouped_position_reports"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmlzZV9hcHBsaWVkX2RpZ2l0YWxpc2F0aW9uX3VzZXIiLCJleHAiOjE2NzE2MTQ1NzN9.gkdwko_qmo0qf22vpgUeHV1_PVky9UTj908XPPvnoFg"
+		},
+		{
+			"key": "locations_polygon",
+			"value": "{\n        \"type\": \"Polygon\",\n        \"coordinates\": [\n          [\n            [\n              11.774253845214844,\n              57.65201440875244\n            ],\n            [\n              11.906089782714844,\n              57.65201440875244\n            ],\n            [\n              11.906089782714844,\n              57.7013956150995\n            ],\n            [\n              11.774253845214844,\n              57.7013956150995\n            ],\n            [\n              11.774253845214844,\n              57.65201440875244\n            ]\n          ]\n        ]\n      }"
+		}
+	]
+}

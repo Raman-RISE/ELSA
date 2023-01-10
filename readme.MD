@@ -1,10 +1,12 @@
-#Summary
+# Summary
 ELSA project repository
 
-#Instructions
+# Instructions
 
-#Data sets
+## Data sets
 TODO: Add links here
 
-#Jupyter instructions
+## Data preparation
+Tile the images, etc. 
 
+## Jupyter/Conda instructions
